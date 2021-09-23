@@ -1,0 +1,7 @@
+name: WelcomeSystem
+version: ${project.version}
+main: lol.wesley.welcomesystem.WelcomeSystem
+api-version: 1.17
+authors: [ Wesley ]
+description: Welcome System Plugin
+website: wesley.lol

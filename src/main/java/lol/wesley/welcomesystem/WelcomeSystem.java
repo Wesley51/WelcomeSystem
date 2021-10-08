@@ -19,8 +19,6 @@ public final class WelcomeSystem extends JavaPlugin implements Listener {
     @Override
     public void onEnable() {
         // Plugin startup logic
-        list.clear();
-        words.clear();
         Static.init();
         addWords();
         getServer().getPluginManager().registerEvents(this,this);
@@ -34,7 +32,7 @@ public final class WelcomeSystem extends JavaPlugin implements Listener {
     @EventHandler
     public void onMessage(AsyncPlayerChatEvent e) {
         CharSequence s = words.toString();
-        if ((e.getMessage().toLowerCase().contains("wb") || e.getMessage().toLowerCase().contains("welcome"))&& Static.accepting) {
+        if ((words.contains(getMessage.toLowerCase()))&& Static.accepting) {
             if (e.getPlayer().getName().equals(Static.joiner)) return;
             System.out.println(e.getPlayer().toString());
             System.out.println(Static.joiner);
@@ -47,7 +45,6 @@ public final class WelcomeSystem extends JavaPlugin implements Listener {
             new BukkitRunnable(){
                 @Override
                 public void run() {
-
                     Static.accepting = false;
                     Static.joiner = null;
                 }
